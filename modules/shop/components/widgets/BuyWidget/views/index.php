@@ -1,0 +1,1 @@
+<a class="image-hovel-link btn-add-to-bin to_cart popup-basket" data-id="<?= $id_prod; ?>" href="#popup_basket"><span><?=Yii::t('trans', 'buy')?></span></a>

@@ -1,0 +1,58 @@
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On
+</IfModule>
+
+<IfModule mod_deflate.c>
+    #The following line is enough for .js and .css
+    AddOutputFilter DEFLATE js css
+
+    #The following line also enables compression by file content type, for the following list of Content-Type:s
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml
+
+    #The following lines are to avoid bugs with some browsers
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|xml|gz)$">
+    Header append Vary: Accept-Encoding
+  </FilesMatch>
+</IfModule>
+<ifmodule mod_expires.c>
+<Filesmatch "\.(jpg|jpeg|png|gif|js|css|swf|ico|woff|mp3|svg)$">
+    ExpiresActive on
+    ExpiresDefault "access plus 2 weeks"
+</Filesmatch>
+</ifmodule>
+
+AddDefaultCharset utf-8
+
+RewriteEngine on
+
+#HTPPS
+RewriteCond %{SERVER_PORT} 80
+RewriteCond %{HTTP_HOST} ^colormarket.online$
+RewriteRule ^(.*)$ https://colormarket.online/$1 [R=301,L]
+#WITHOUT WWW
+RewriteCond %{HTTP_HOST} ^www.colormarket.online$ [NC]
+RewriteRule ^(.*)$ https://colormarket.online/$1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/sitemap.xml$
+RewriteRule ^.*$ web/uploads/sitemaps/sitemap.xml  [L]
+
+RewriteCond %{REQUEST_URI} !\?
+RewriteCond %{REQUEST_URI} !\&
+RewriteCond %{REQUEST_URI} !\=
+RewriteCond %{REQUEST_URI} !\.
+RewriteCond %{REQUEST_URI} ![^\/]$
+RewriteRule ^(.*)\/$ /$1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/.*
+RewriteRule ^(.*)$ web/$1 [L]
+
+RewriteCond %{REQUEST_URI} !^/web/
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ web/index.php

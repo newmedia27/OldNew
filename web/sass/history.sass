@@ -1,0 +1,186 @@
+.history-content
+  display: inline-block
+  vertical-align: top
+  width: 790px
+  background-color: #fff
+  padding: 10px 30px
+  h3
+    font-size: 16px
+    font-weight: 400
+    margin: 0
+    padding: 18px 0
+.his-table
+  background-color: #fafafa
+  padding: 0 22px
+  margin-bottom: 20px
+.his-head
+  height: 64px
+  align-items: center
+  justify-content: space-between
+.his-info
+  flex-grow: 1
+  color: #a3a4a6
+  align-items: center
+  justify-content: space-between
+  p
+    font-size: 22px
+  span
+    font-size: 14px
+.his-status
+  flex-basis: 135px
+  align-items: center
+  margin-left: 26px
+  justify-content: space-between
+  span
+    font-size: 12px
+    text-transform: uppercase
+    background-color: #f3d400
+    color: #ffffff
+    padding: 3px 10px
+    border-radius: 4px
+    margin-right: 26px
+  .his-ready
+    background-color: #8ad530
+  a
+    font-size: 14px
+    color: #e88b24
+.his-body
+  border-top: 1px solid #d5d5d5
+  margin: 0 -20px
+  opacity: 0
+  visibility: hidden
+  height: 0
+  overflow: hidden
+  &.active
+    height: auto
+    visibility: visible
+    opacity: 1
+.his-item
+  padding: 16px 20px
+  align-items: center
+  justify-content: space-between
+  border-bottom: 1px solid #efefef
+  &:last-child
+    border-bottom-color: #d5d5d5
+.his-image
+  width: 92px
+  height: 92px
+  position: relative
+  margin-right: 18px
+  img
+    position: absolute
+    left: 50%
+    top: 50%
+    max-width: 85%
+    max-height: 85%
+    transform: translate(-50%, -50%)
+.his-desc
+  width: 300px
+  h5
+    color: #e88b24
+    font-size: 16px
+    font-weight: normal
+    margin: 0
+  p
+    font-size: 12px
+    color: #a3a4a6
+    margin-bottom: 0
+.his-count-price
+  align-items: center
+  justify-content: space-between
+  flex-grow: 1
+  p
+    font-size: 16px
+    text-align: right
+  .his-count
+    flex-basis: 45%
+    margin-right: 10px
+  span
+    color: #a3a4a6
+.his-payment
+  justify-content: space-between
+  padding: 0 20px
+  border-bottom: 1px solid #d5d5d5
+  p
+    font-size: 16px
+    margin: 0
+    padding: 18px 0
+.his-buttons
+  padding: 20px
+  text-align: right
+  a
+    margin-left: 34px
+    height: 38px
+    line-height: 38px
+    display: inline-block
+    font-size: 16px
+    color: #ffffff
+    border-radius: 19px
+    padding: 0 24px
+    background-color: #fbab51
+.his-ready-head
+  padding: 30px 0 0
+  background-color: #FAFAFA
+  margin: 0 -30px
+  h3
+    background-color: #fff
+    padding-left: 30px
+    padding-right: 30px
+@media only screen and (max-width : 1200px)
+  .history-content
+    width: 100%
+    margin-top: 30px
+  .history-wrap
+    .my-acc-nav
+      width: 100%
+@media only screen and (max-width : 992px)
+  .his-image
+    display: none
+  .his-payment
+    p
+      font-size: 14px
+@media only screen and (max-width : 767px)
+  .his-body
+    margin: 0 -15px
+  .history-content
+    padding: 15px
+  .his-table
+    padding: 0 15px
+    .his-item
+      display: block
+      padding: 15px
+    .his-desc
+      width: 100%
+    .his-count-price
+      padding-top: 16px
+      p
+        flex-basis: auto
+        margin: 0
+    .his-payment
+      display: block
+      text-align: center
+      p
+        padding: 0
+        margin: 15px 0
+    .his-head
+      height: auto
+      padding: 15px 0
+      p
+        margin: 0
+        padding-bottom: 15px
+    .his-info, .his-status
+      display: block
+    .his-status
+      text-align: right
+      flex-basis: auto
+      span
+        display: block
+        margin: 0 0 15px
+  .his-buttons
+    text-align: center
+    a
+      margin: 10px 15px
+  .his-ready-head
+    margin: 0 -15px
+    h3
+      padding-left: 15px
